@@ -35,7 +35,7 @@ docker run -v <absolute-path-to-folder-with-worlds>:/worlds fragsoc/tmodloader
 
 **TODO**: add me!
 
-# Running
+# Usage
 
 - The container exposes port `7777` on TCP, ensure to forward it
 - A custom config file can be mounted into the container, then used by overriding the command with `-config <path-to-file-in-container>`
@@ -46,6 +46,15 @@ Location | Purpose
 ---|---
 `/worlds` | Worlds, corresponds to `~/.local/share/Terraria/ModLoader/Worlds`
 `/mods` | Mods, corresponds to `~/.local/share/Terraria/ModLoader/Mods`
+
+## Build Args
+
+Arg Name | Default | Purpose
+---|---
+`UID` | `999` | Unix UID to use when running the server
+`SERVER_VER` | `1412` | Terraria version integer (numeric chars only)
+`SERVER_VER_INC` | `042` | Terraria version increment, used for server downloads
+`TMODLOADER_VERSION` | `v0.11.8.1` | tModLoader version string
 
 # Licensing
 
