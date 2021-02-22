@@ -7,11 +7,11 @@ ARG TMODLOADER_VERSION="v0.11.8.1"
 RUN apt-get update && \
     apt-get install -y unzip curl
 
-RUN curl -L
-        -o /tmp/terrariaServer.zip
+RUN curl -L \
+        -o /tmp/terrariaServer.zip \
         https://terraria.org/system/dedicated_servers/archives/000/000/${SERVER_VER_INC}/original/terraria-server-${SERVER_VER}.zip && \
-    curl -L
-        -o /tmp/tModLoader.zip
+    curl -L \
+        -o /tmp/tModLoader.zip \
         https://github.com/tModLoader/tModLoader/releases/download/${TMODLOADER_VERSION}/tModLoader.Linux.${TMODLOADER_VERSION}.zip && \
     unzip -d /tmp /tmp/terrariaServer.zip && \
     unzip -d /tmp/tModLoader /tmp/tModLoader.zip
