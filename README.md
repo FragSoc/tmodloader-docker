@@ -28,17 +28,27 @@ If you have a world you've previously generated, you can use it as a drop-in wit
 3. Run the server:
 
 ```
-docker run -v <absolute-path-to-folder-with-worlds>:/worlds fragsoc/tmodloader
+docker run -v <absolute-path-to-folder-with-worlds>:/worlds -p 7777:7777 fragsoc/tmodloader
 ```
 
 ## Without World
 
-**TODO**: add me!
+If you want to use the server to generate a world, you need to use the interactive mode.
+
+1. Run the server to generate the world (don't forget those speech marks):
+
+```
+docker run -it --rm -v <absolute-path-to-folder-to-put-worlds-in>:/worlds fragsoc/tmodloader ""
+```
+
+2. Follow the onscreen prompts to generate your world - **name it `dockerWorld`**
+3. Follow the "With Existing World" instructions with your new world files
 
 # Usage
 
 - The container exposes port `7777` on TCP, ensure to forward it
 - The container will put logfiles in `/logs`; note that this is not a volume
+- To install mods, insert them into the `/mods` volume as if it were the `Mods` folder, then follow normal configuration steps
 - A custom config file can be mounted into the container, then used by overriding the command with `-config <path-to-file-in-container>`
 
 ## Volumes
