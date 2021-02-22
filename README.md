@@ -59,6 +59,6 @@ Arg Name | Default | Purpose
 
 # Licensing
 
-The contents of this repo are licensed under the [GNU AGPL]().
+The contents of this repo are licensed under the [GNU AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html).
 However, the software contained in the final image contains from both [ReLogic](https://re-logic.com/) and [tModLoader](https://tmodloader.net/).
-No credit is taken for this software.
+No credit is taken for this software, and this image is __not__ uploaded to docker hub or any other registry.
