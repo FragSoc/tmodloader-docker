@@ -38,6 +38,7 @@ docker run -v <absolute-path-to-folder-with-worlds>:/worlds fragsoc/tmodloader
 # Usage
 
 - The container exposes port `7777` on TCP, ensure to forward it
+- The container will put logfiles in `/logs`; note that this is not a volume
 - A custom config file can be mounted into the container, then used by overriding the command with `-config <path-to-file-in-container>`
 
 ## Volumes
