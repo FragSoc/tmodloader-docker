@@ -50,7 +50,7 @@ Location | Purpose
 ## Build Args
 
 Arg Name | Default | Purpose
----|---
+---|---|---
 `UID` | `999` | Unix UID to use when running the server
 `SERVER_VER` | `1412` | Terraria version integer (numeric chars only)
 `SERVER_VER_INC` | `042` | Terraria version increment, used for server downloads
