@@ -33,6 +33,7 @@ ENV TERRARIA_DATA="/root/.local/share/Terraria/ModLoader"
 
 COPY --from=downloader /tmp/${SERVER_VER}/Linux ${INSTALL_LOC}
 COPY --from=downloader /tmp/tModLoader/* ${INSTALL_LOC}/
+COPY ./default-config.txt /default-config.txt
 
 RUN chmod +x ${INSTALL_LOC}/tModLoaderServer* && \
     mkdir -p ${TERRARIA_DATA} && \
@@ -41,8 +42,9 @@ RUN chmod +x ${INSTALL_LOC}/tModLoaderServer* && \
     ln -s ${LOGS_LOC} ${TERRARIA_DATA}/Logs
     # chown -R terraria:terraria ${TERRARIA_DATA}
 
-VOLUME ${WORLDS_LOC} ${MODS_LOC} ${LOGS_LOC}
+VOLUME ${WORLDS_LOC} ${MODS_LOC}
 WORKDIR ${INSTALL_LOC}
 EXPOSE 7777
 # USER terraria
 ENTRYPOINT ["./tModLoaderServer.bin.x86_64"]
+CMD ["-config", "/default-config.txt"]

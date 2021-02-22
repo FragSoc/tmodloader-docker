@@ -1,0 +1,4 @@
+port=7777
+password=
+maxplayers=16
+world=/worlds/dockerWorld.wld
