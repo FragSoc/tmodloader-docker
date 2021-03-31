@@ -9,12 +9,10 @@
 
 # Quickstart
 
-Clone this repo, change into it's directory and build the docker image:
+Build this repo's image:
 
-```
-$ git clone https://github.com/FragSoc/tmodloader-docker
-$ cd tmodloader-docker
-$ docker build -t fragsoc/tmodloader .
+```bash
+docker build -t tmodloader https://github.com/FragSoc/tmodloader-docker.git
 ```
 
 Then follow the steps below to run.
@@ -24,10 +22,10 @@ Then follow the steps below to run.
 If you have a world you've previously generated, you can use it as a drop-in with this server.
 
 1. Copy your existing world files (`.wld` and `.twld`) to a folder you can view
-2. Rename them to `dockerWorld.wld` and `dockerWorld.twld`
-3. Run the server:
+1. Rename them to `dockerWorld.wld` and `dockerWorld.twld`
+1. Run the server:
 
-```
+```bash
 docker run -v <absolute-path-to-folder-with-worlds>:/worlds -p 7777:7777 fragsoc/tmodloader
 ```
 
@@ -37,7 +35,7 @@ If you want to use the server to generate a world, you need to use the interacti
 
 1. Run the server to generate the world (don't forget those speech marks):
 
-```
+```bash
 docker run -it --rm -v <absolute-path-to-folder-to-put-worlds-in>:/worlds fragsoc/tmodloader ""
 ```
 
