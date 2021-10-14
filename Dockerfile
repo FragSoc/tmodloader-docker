@@ -1,15 +1,15 @@
 FROM debian:stretch-slim AS downloader
 
-ARG SERVER_VER="1412"
+ARG SERVER_VER="1423"
 ARG SERVER_VER_INC="042"
-ARG TMODLOADER_VERSION="v0.11.8.1"
+ARG TMODLOADER_VERSION="v0.11.8.5"
 
 RUN apt-get update && \
     apt-get install -y unzip curl
 
 RUN curl -L \
         -o /tmp/terrariaServer.zip \
-        https://terraria.org/system/dedicated_servers/archives/000/000/${SERVER_VER_INC}/original/terraria-server-${SERVER_VER}.zip && \
+        https://terraria.org/api/download/pc-dedicated-server/terraria-server-${SERVER_VER}.zip && \
     curl -L \
         -o /tmp/tModLoader.zip \
         https://github.com/tModLoader/tModLoader/releases/download/${TMODLOADER_VERSION}/tModLoader.Linux.${TMODLOADER_VERSION}.zip && \
@@ -18,7 +18,7 @@ RUN curl -L \
 
 FROM debian:stretch-slim AS runner
 
-ARG SERVER_VER="1412"
+ARG SERVER_VER="1423"
 ARG UID="999"
 
 ENV INSTALL_LOC="/terraria"
